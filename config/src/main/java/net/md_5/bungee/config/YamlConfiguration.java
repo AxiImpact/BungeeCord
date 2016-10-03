@@ -49,18 +49,18 @@ public class YamlConfiguration extends ConfigurationProvider
     };
 
     @Override
-    public void save(Configuration config, File file) throws IOException
+    public void save(Configuration server, File file) throws IOException
     {
         try ( FileWriter writer = new FileWriter( file ) )
         {
-            save( config, writer );
+            save( server, writer );
         }
     }
 
     @Override
-    public void save(Configuration config, Writer writer)
+    public void save(Configuration server, Writer writer)
     {
-        yaml.get().dump( config.self, writer );
+        yaml.get().dump( server.self, writer );
     }
 
     @Override
